@@ -70,3 +70,9 @@ webpack-stats.json
 webpack-dev-server.log
 webpack-dev-server.*.hot
 webpack-dev-server.*.log
+.vercel
+
+uploads/*.jpg
+uploads/*.png
+uploads/*.jpeg
+!uploads/.gitkeep
