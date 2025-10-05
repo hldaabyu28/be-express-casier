@@ -44,10 +44,11 @@ exports.getProductById = async (req, res) => {
 };
 
 // Tambah produk baru
+// src/controllers/productController.js
 exports.createProduct = async (req, res) => {
   try {
     const { name, price, stock, description } = req.body;
-    const image = req.file ? `/uploads/${req.file.filename}` : null;
+    const image = req.file ? req.file.path : null; // URL Cloudinary
 
     const product = new Product({
       name,
