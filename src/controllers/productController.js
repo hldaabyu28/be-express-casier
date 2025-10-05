@@ -44,7 +44,6 @@ exports.getProductById = async (req, res) => {
 };
 
 // Tambah produk baru
-// src/controllers/productController.js
 exports.createProduct = async (req, res) => {
   try {
     const { name, price, stock, description } = req.body;
@@ -81,7 +80,7 @@ exports.updateProduct = async (req, res) => {
     const updateData = { name, price, stock, description };
 
     if (req.file) {
-      updateData.image = `/uploads/${req.file.filename}`;
+      updateData.image = req.file.path; 
     }
 
     const product = await Product.findByIdAndUpdate(
