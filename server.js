@@ -13,6 +13,7 @@ const productRoutes = require("./src/routes/productRoutes");
 const transactionRoutes = require("./src/routes/transactionRoutes");
 const discountRoutes = require("./src/routes/discountRoutes");
 const taxRoutes = require("./src/routes/taxRoutes");
+const categoryRoutes = require("./src/routes/categoryRoutes");
 
 const app = express();
 
@@ -50,6 +51,7 @@ app.use("/api/products", productRoutes);
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/discounts", discountRoutes);
 app.use("/api/taxes", taxRoutes);
+app.use("/api/categories", categoryRoutes); 
 
 // Error handler
 app.use((err, req, res, next) => {

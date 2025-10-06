@@ -17,6 +17,11 @@ const productSchema = new mongoose.Schema({
     min: [0, 'Stok tidak boleh negatif'],
     default: 0
   },
+  category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Category',
+    required: [true, 'Kategori wajib diisi']
+  },
   image: {
     type: String,
     default: null
